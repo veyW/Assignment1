@@ -11,6 +11,7 @@ el_power$Date<-NULL
 el_power$Time<-strptime(el_power$Time, format="%d/%m/%Y %H:%M:%S")
 
 # make plot1-4multiple plots
+png(width=480, height=480, filename="Plot4.png")
 par(mfrow=c(2,2))
 plot(el_power$Time, el_power$Global_active_power, pch="", ylab="Global Active Power (kw)", xlab="")
 lines(el_power$Time, el_power$Global_active_power )
@@ -28,5 +29,5 @@ legend("topright", col=c("black", "red", "blue"), legend=names(el_power)[6:8], l
 
 plot(el_power$Time, el_power$Global_reactive_power, pch="", ylab="Global reactive power", xlab="DateTime")
 lines(el_power$Time, el_power$Global_reactive_power )
-dev.copy(png, "Plot4.png", width = 480, height = 480)
+
 dev.off()

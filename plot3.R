@@ -10,6 +10,7 @@ el_power$Date<-NULL
 el_power$Time<-strptime(el_power$Time, format="%d/%m/%Y %H:%M:%S")
 
 # make plot3
+png(width=480, height=480, filename="Plot3.png")
 with(el_power, plot(Time, Sub_metering_1, type="n", ylab="Energy sub metering", xlab=""))
 with(el_power, lines(Time, Sub_metering_1))
 with(el_power, lines(Time, Sub_metering_2, col="red"))
